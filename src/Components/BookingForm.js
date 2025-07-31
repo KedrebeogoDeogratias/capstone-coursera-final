@@ -65,18 +65,18 @@ function BookingForm(props) {
         <form id="booking-form" onSubmit={handleSubmit}>
             <h1>Reserve a Table</h1>
             <h2>Book a table for any occasion</h2>
-            <label for="res-date">Date</label>
+            <label htmlFor="res-date">Date</label>
             <input type="date" id="res-date" name="date" value={fieldData['date']} onChange={handleChange} required className={fieldErrors['date-error'] === "" ? "valid-date" : "invalid-date"}/>
             <p id="date-error" style={fieldErrors['date-error'] === "" ? {} : {"display": "block"}}>{fieldErrors['date-error']}</p>
-            <label for="res-time">Time</label>
+            <label htmlFor="res-time">Time</label>
             <select id="res-time" name="res-time" value={fieldData['res-time']} onChange={handleChange} className={fieldErrors['res-time-error'] === "" ? "valid-select" : "invalid-select"}>
                 <option value="--select--" key="select">--select--</option>
                 {props.availableTimes.map((time) => <option value={time} key={time}>{time}</option>)}
             </select>
             <p id="time-error" style={fieldErrors['res-time-error'] === "" ? {} : {"display": "block"}}>{fieldErrors['res-time-error']}</p>
-            <label for="guests">Number of guests</label>
+            <label htmlFor="guests">Number of guests</label>
             <input type="number" placeholder="1" min="1" max="10" id="guests" name="guests" value={fieldData['guests']} onChange={handleChange}/>
-            <label for="occasion">Occasion</label>
+            <label htmlFor="occasion">Occasion</label>
             <select id="occasion" name="occasion" value={fieldData['occasion']} className="valid-select" onChange={handleChange}>
                 <option>Birthday</option>
                 <option>Anniversary</option>
